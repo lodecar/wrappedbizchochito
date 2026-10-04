@@ -1,0 +1,309 @@
+@media (max-width:700px) {
+  :root { --safe-top:104px; --safe-bottom:92px; }
+  .scene { padding-left:20px; padding-right:20px; }
+  .topbar { align-items:flex-start; }
+  .topbar > span { max-width:135px; line-height:1.25; }
+  .progress { max-width:52%; gap:3px; }
+  .progress i { flex-basis:6px; }
+  .progress i.on { flex-basis:14px; }
+  .audio-button { top:58px; }
+  .hint { bottom:24px; max-width:58%; text-align:center; white-space:normal; line-height:1.2; }
+  .back-button { bottom:17px; }
+  .mega { font-size:clamp(54px,19vw,108px); }
+  .huge { font-size:clamp(46px,15vw,88px); }
+  .date-grid { grid-template-columns:1fr; gap:18px; text-align:center; }
+  .date-big { font-size:clamp(90px,31vw,155px); line-height:.72; }
+  .date-copy { font-size:clamp(44px,17vw,82px); }
+  .date-copy span { margin:18px auto 0; font-size:clamp(15px,5vw,23px); }
+  .official-date { font-size:clamp(45px,13vw,72px); white-space:normal; }
+  .days { font-size:clamp(105px,34vw,185px); }
+  .stat { font-size:clamp(58px,18vw,100px); line-height:.85; }
+  .movie-cards { gap:6px; margin:25px auto; }
+  .movie { width:min(29vw,125px); padding:7px; font-size:clamp(9px,2.8vw,13px); }
+  .favors { grid-template-columns:1fr; gap:9px; margin-top:20px; }
+  .favor { min-height:58px; padding:11px 10px; }
+  .game-title { font-size:clamp(43px,14vw,75px); }
+  .rigged { min-height:70px; margin-top:15px; }
+}
+@media (max-height:650px) and (min-width:701px) {
+  :root { --safe-top:70px; --safe-bottom:58px; }
+  .mega { font-size:clamp(58px,11vw,155px); }
+  .huge { font-size:clamp(45px,8vw,115px); }
+  .stat { font-size:clamp(70px,15vw,210px); }
+  .movie-cards { margin:18px auto; }
+  .favor { min-height:68px; padding:12px; }
+}
+
+@media (max-width:700px) {
+  .movie-cards { gap:9px; margin:24px auto; }
+  .movie { width:min(29vw,150px); }
+  .movie img { border-width:2px; border-radius:7px; }
+  .movie figcaption { font-size:10px; margin-top:9px; }
+}
+
+@media (max-width: 700px) {
+  .travel-photo {
+    background-position: 62% center;
+  }
+
+  .travel-overlay {
+    background: linear-gradient(180deg, rgba(5, 12, 28, .48) 0%, rgba(5, 12, 28, .82) 68%, rgba(5, 12, 28, .94) 100%);
+  }
+
+  .travel-content {
+    align-self: end;
+  }
+}
+
+/* V4.6 — intro TV responsive */
+@media (max-width: 900px) {
+  .scene-intro .content { grid-template-columns:1fr; gap:24px; text-align:center; }
+  .intro-copy { text-align:center; }
+  .intro-copy .kicker { margin-inline:auto; }
+  .intro-copy .mega { font-size:clamp(48px,13vw,92px); }
+  .crt-wrap { width:min(620px,86vw); justify-self:center; }
+  .crt-face { grid-template-columns:1fr 78px; gap:12px; }
+  .crt-screen { border-width:10px; }
+  .crt-knob { width:45px; height:45px; }
+  .crt-knob.small { width:34px; height:34px; }
+  .crt-speaker { width:54px; height:68px; }
+}
+@media (max-width: 560px) {
+  :root { --safe-top:78px; --safe-bottom:72px; }
+  .topbar span { max-width:58%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .audio-button { top:48px; right:14px; padding:7px 10px; font-size:9px; }
+  .back-button { left:14px; bottom:14px; padding:7px 10px; font-size:9px; }
+  .hint { bottom:17px; font-size:9px; }
+  .scene-intro .content { gap:16px; }
+  .intro-copy .kicker { font-size:10px; margin-bottom:10px; }
+  .intro-copy .mega { font-size:clamp(42px,16vw,72px); }
+  .crt-wrap { width:min(94vw,520px); }
+  .crt-tv { padding:13px; border-radius:22px; }
+  .crt-face { grid-template-columns:1fr 54px; gap:8px; }
+  .crt-screen { border-width:7px; border-radius:28px / 22px; }
+  .crt-brand { font-size:7px; margin-bottom:12px; }
+  .crt-knob { width:34px; height:34px; margin-bottom:10px; }
+  .crt-knob.small { width:27px; height:27px; }
+  .crt-speaker { width:38px; height:48px; }
+  .crt-legs::before,.crt-legs::after { bottom:-12px; width:48px; height:18px; }
+  .crt-legs::before { left:52px; }
+  .crt-legs::after { right:52px; }
+}
+
+/* V4.7 — cabecera y portada equilibradas */
+@media (max-width: 900px) {
+  :root { --safe-top: 92px; }
+
+  .topbar {
+    grid-template-columns: auto 1fr auto;
+    gap: 6px;
+    border-radius: 18px;
+  }
+
+  .topbar .brand { display: none; }
+  .progress { justify-self: center; width: min(240px, 100%); }
+
+  .scene-intro .content {
+    grid-template-columns: 1fr;
+    gap: clamp(18px, 4vh, 34px);
+    text-align: center;
+  }
+
+  .intro-copy {
+    text-align: center;
+    max-width: 680px;
+    margin-inline: auto;
+  }
+
+  .intro-copy .kicker { margin-inline: auto; }
+  .intro-copy .mega { font-size: clamp(52px, 12vw, 90px); }
+  .crt-wrap { width: min(520px, 76vw); justify-self: center; }
+}
+
+@media (max-width: 560px) {
+  :root { --safe-top: 84px; --safe-bottom: 68px; }
+
+  .topbar {
+    top: max(8px, env(safe-area-inset-top));
+    left: max(8px, env(safe-area-inset-left));
+    right: max(8px, env(safe-area-inset-right));
+    min-height: 40px;
+    padding: 5px 6px;
+  }
+
+  .header-control { padding: 6px 7px; font-size: 8px; }
+  .progress { width: 100%; gap: 2px; }
+  .progress i { flex-basis: 5px; height: 3px; }
+  .progress i.on { flex-basis: 12px; }
+
+  .scene-intro .content { gap: 14px; }
+  .intro-copy .kicker { max-width: 300px; margin-bottom: 10px; }
+  .intro-copy .mega { font-size: clamp(44px, 15vw, 68px); }
+  .intro-copy .stamp { margin-top: 12px; }
+  .crt-wrap { width: min(92vw, 430px); }
+}
+
+@media (max-height: 720px) and (min-width: 901px) {
+  .scene-intro .content { width: min(1080px, 100%); gap: 44px; }
+  .intro-copy .mega { font-size: clamp(52px, 6.4vw, 92px); }
+  .crt-wrap { width: min(480px, 38vw); }
+}
+
+@media (max-width: 700px) {
+  .scene-official .official-story { width: 92vw; margin-top: 16px; gap: 9px; }
+  .scene-official .official-attempt { font-size: 10px; letter-spacing: .08em; padding: 6px 9px; }
+  .scene-official .official-story strong { font-size: clamp(19px, 6vw, 30px); box-shadow: 6px 6px 0 #17110f; }
+}
+
+@media (max-height: 720px) and (min-width: 701px) {
+  .scene-official .official-date { font-size: clamp(70px, 9vw, 135px); }
+  .scene-official .official-story { margin-top: 12px; }
+  .scene-official .official-story strong { font-size: clamp(20px, 2.4vw, 34px); }
+}
+
+/* V6.0 — Cine responsive */
+@media (max-width: 700px) {
+  .scene-movies .movies-layout {
+    gap: 12px;
+    padding-bottom: 34px;
+  }
+  .scene-movies .movies-kicker {
+    font-size: clamp(11px, 3.1vw, 14px);
+  }
+  .scene-movies .movie-cards {
+    width: 100%;
+    gap: 8px;
+  }
+  .scene-movies .movie,
+  .scene-movies .movie-featured {
+    width: min(29vw, 132px);
+  }
+  .scene-movies .movies-ending {
+    width: 94%;
+    padding: 9px 10px 10px;
+  }
+  .scene-movies .movies-ending span,
+  .scene-movies .movies-ending strong {
+    display: block;
+  }
+  .scene-movies .movies-ending span { margin: 0 0 4px; }
+}
+
+@media (max-height: 760px) and (min-width: 701px) {
+  .scene-movies .movies-layout { gap: 8px; padding-bottom: 24px; }
+  .scene-movies .movie { width: clamp(125px, 13vw, 185px); }
+  .scene-movies .movie-featured { width: clamp(135px, 14vw, 198px); }
+  .scene-movies .movies-ending { padding: 8px 16px 9px; }
+}
+
+/* V6.3 · Final responsive */
+@media (max-width: 700px) {
+  .scene-final .final-content { width: 92vw; gap: 14px; padding-bottom: 70px; }
+  .scene-final .final-title { font-size: clamp(58px, 20vw, 92px); }
+  .scene-final .final-date { gap: 9px; font-size: clamp(25px, 8.5vw, 42px); }
+  .scene-final .final-message { width: 90vw; padding: 11px 13px 13px; }
+}
+
+@media (max-height: 760px) and (min-width: 701px) {
+  .scene-final .final-content { gap: 11px; padding-top: 52px; padding-bottom: 50px; }
+  .scene-final .final-title { font-size: clamp(72px, 8.8vw, 126px); }
+  .scene-final .final-date { margin-top: 4px; font-size: clamp(30px, 3.7vw, 54px); }
+  .scene-final .final-message { padding: 9px 17px 11px; }
+}
+
+/* Carta de amor */
+@media (max-width: 700px) {
+  .letter-content { padding-top:80px; }
+  .letter-eyebrow { top:105px; width:84vw; font-size:11px; }
+  .letter-stage { width:92vw; height:62vh; }
+  .paper-crumple { width:118px; }
+  .love-letter { width:84vw; height:54vh; padding:28px 24px; box-shadow:10px 12px 0 #eaff38, 0 24px 50px rgba(0,0,0,.5); }
+  .love-letter.show { box-shadow:10px 12px 0 #eaff38, 0 24px 50px rgba(0,0,0,.5); }
+  .letter-paper-content h2 { font-size:clamp(34px,11vw,52px); }
+  .letter-placeholder { font-size:17px; line-height:1.45; }
+}
+
+@media (max-height: 720px) and (min-width: 701px) {
+  .letter-eyebrow { top:90px; }
+  .letter-stage { height:56vh; }
+  .love-letter { height:45vh; }
+}
+
+/* V6.5 — 25/06 responsive */
+@media (max-width: 700px) {
+  .scene-official .content { width: 92vw; padding-top: 54px; }
+  .scene-official .official-date { font-size: clamp(58px, 18vw, 92px); white-space: nowrap; }
+  .scene-official .official-story { width: 88vw; margin-top: 30px; }
+  .scene-official .official-attempt { max-width: 82vw; font-size: 9px; line-height: 1.25; padding: 7px 10px; }
+  .scene-official .official-story strong { padding: 20px 16px; font-size: clamp(19px, 5.8vw, 28px); box-shadow: 7px 7px 0 #17110f; }
+}
+
+@media (max-height: 720px) and (min-width: 701px) {
+  .scene-official .content { padding-top: 32px; }
+  .scene-official .official-eyebrow { margin-bottom: 8px; }
+  .scene-official .official-date { font-size: clamp(70px, 8.8vw, 126px); }
+  .scene-official .official-story { margin-top: 24px; }
+  .scene-official .official-story strong { padding-top: 18px; padding-bottom: 18px; font-size: clamp(22px, 2.3vw, 32px); }
+}
+
+/* V6.7 · Meet Me Halfway responsive */
+@media (max-width: 800px) {
+  .song-layout { grid-template-columns:1fr; gap:24px; text-align:center; width:min(92vw,620px); }
+  .scene-song .song { font-size:clamp(4.2rem,18vw,7rem); }
+  .song-memory { margin:22px 0 14px; }
+  .song-cover { width:min(250px,58vw); transform:rotate(2deg); }
+}
+@media (max-height: 720px) and (min-width: 801px) {
+  .scene-song .song { font-size:clamp(4.5rem,8vw,8rem); }
+  .song-cover { width:min(310px,27vw); }
+}
+
+/* V6.9 · SAONA responsive */
+@media (max-width: 800px) {
+  .scene-saona { background: linear-gradient(155deg, #12bd8a 0 78%, #eaff38 78% 100%); }
+  .saona-layout { width: 90vw; grid-template-columns: 1fr; gap: 24px; padding-top: 52px; }
+  .saona-title { font-size: clamp(92px, 27vw, 150px); }
+  .saona-story { width: min(78vw, 430px); justify-self: end; padding: 22px 23px 24px; }
+  .saona-tag { grid-column: auto; margin-left: 0; }
+  .saona-orbit-a { right: -90px; }
+  .saona-orbit-b { display: none; }
+}
+@media (max-height: 720px) and (min-width: 801px) {
+  .saona-layout { padding-top: 50px; row-gap: 16px; }
+  .saona-title { font-size: clamp(100px, 13vw, 185px); }
+  .saona-story { padding: 20px 24px 22px; }
+}
+
+/* V7.3 · Carta responsive */
+@media (max-width: 800px) {
+  .scene-letter .letter-stage {
+    width: 94vw;
+    height: 70vh;
+    margin-top: 30px;
+  }
+  .scene-letter .love-letter {
+    width: 88vw;
+    height: 62vh;
+    padding: 24px 22px;
+  }
+  .scene-letter .letter-paper-content h2 {
+    font-size: clamp(32px, 9vw, 46px);
+    margin-bottom: 14px;
+  }
+  .scene-letter .letter-body {
+    column-count: 1;
+    height: calc(100% - 88px);
+    overflow-y: auto;
+    padding-right: 8px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 801px) {
+  .scene-letter .letter-eyebrow { top: 82px; }
+  .scene-letter .letter-stage { height: 70vh; margin-top: 32px; }
+  .scene-letter .love-letter { height: 61vh; }
+  .scene-letter .letter-body { font-size: 12px; line-height: 1.3; }
+  .scene-letter .letter-body p { margin-bottom: 9px; }
+}

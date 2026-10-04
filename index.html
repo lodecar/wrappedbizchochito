@@ -1,0 +1,671 @@
+<!doctype html>
+
+<html lang="es">
+
+
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Carlos + Carla — Wrapped</title>
+
+  <link rel="stylesheet" href="./css/base.css" />
+
+  <link rel="stylesheet" href="./css/scenes.css" />
+
+  <link rel="stylesheet" href="./css/responsive.css" />
+
+</head>
+
+
+
+<body>
+
+  <main class="app" id="app">
+
+    <header class="topbar">
+
+      <button class="header-control interactive" id="backButton" type="button" aria-label="Volver">← ATRÁS</button>
+
+      <span class="brand">CARLOS + CARLA · WRAPPED</span>
+
+      <div class="progress" id="progress" aria-label="Progreso"></div>
+
+      <button class="header-control interactive" id="audioButton" type="button">♫ AUDIO: ON</button>
+
+    </header>
+
+
+
+    <section class="scene scene-intro active" data-scene="0">
+
+      <div class="noise"></div>
+
+      <div class="content">
+
+        <div class="intro-copy">
+
+          <p class="kicker reveal" data-step>Esto es lo que llevamos hasta ahora.</p>
+
+          <h1 class="mega reveal" data-step>CARLOS<br><span class="accent">+ CARLA</span></h1>
+
+          <div class="stamp reveal" data-step>WRAPPED</div>
+
+        </div>
+
+
+
+        <div class="crt-wrap" data-step id="introTv">
+
+          <div class="crt-tv">
+
+            <div class="crt-screen" id="crtScreen">
+
+              <div class="crt-static" id="crtStatic"></div>
+
+              <img class="crt-photo photo-1" data-tv-photo src="./assets/photos/foto-1.jpeg"
+
+                alt="Foto de Carlos y Carla">
+
+              <img class="crt-photo photo-2" data-tv-photo src="./assets/photos/foto-2.jpeg"
+
+                alt="Foto de Carlos y Carla">
+
+              <img class="crt-photo photo-3" data-tv-photo src="./assets/photos/foto-3.jpeg"
+
+                alt="Foto de Carlos y Carla">
+
+              <img class="crt-photo photo-4" data-tv-photo src="./assets/photos/foto-4.jpeg"
+
+                alt="Foto de Carlos y Carla">
+
+            </div>
+
+            <img class="crt-frame" src="./assets/ui/tv-antigua.png" alt="Televisión antigua">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="scene scene-before" data-scene="1">
+
+      <div class="noise"></div>
+
+      <div class="content">
+
+        <h2 class="huge"><span class="line" data-step>ANTES DE</span><span class="line second" data-step>SER
+
+            NOSOTROS</span></h2>
+
+        <p class="kicker reveal" data-step>No nos conociamos, no hablamos, nada. Simplemente eras la chica guapa que
+
+          salía con el astro brasileño que promocionaba las Danet.</p>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="scene scene-first-date" data-scene="2">
+
+      <div class="noise"></div>
+
+      <div class="content date-grid">
+
+        <div>
+
+          <p class="kicker reveal" data-step>Primera vez que quedamos</p>
+
+          <div class="date-big reveal" data-step>27<br>04</div>
+
+        </div>
+
+        <div class="date-copy reveal" data-step>2024<br><span>27 de abril. La primera vez que quedamos. De los mejores
+
+            días de mi vida.Todavía faltaban casi dos meses para que te declarases en el coche.</span></div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="scene scene-official" data-scene="3">
+
+      <div class="noise"></div>
+
+      <div class="content center">
+
+        <p class="kicker official-eyebrow reveal" data-step>FINALMENTE...</p>
+
+        <div class="official-date reveal" data-step>25·06·2024</div>
+
+        <div class="official-story reveal" data-step>
+
+          <span class="official-attempt">AUNQUE HUBO UN INTENTO PARA QUE FUESE ANTES...</span>
+
+          <strong>ESTE FUE EL DÍA EN QUE<br>CARLA CAMPOS SE DECLARÓ EN EL COCHE.</strong>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="scene scene-days" data-scene="4">
+
+      <div class="noise"></div>
+
+      <div class="days-photo" aria-hidden="true">
+
+        <img src="./assets/photos/dias-carlos-carla.jpeg" alt="">
+
+      </div>
+
+      <div class="content center days-content">
+
+        <p class="kicker reveal" data-step>Desde ese día</p>
+
+        <div class="days reveal" id="days" data-step>0</div>
+
+        <div class="sub reveal" data-step>días siendo Carlos + Carla</div>
+
+        <p class="caption reveal" data-step>Y entre medias han cabido bastantes más cosas de las que parece cuando solo
+
+          ves un número.</p>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="scene scene-saona" data-scene="5">
+
+      <div class="noise"></div>
+
+      <div class="saona-orbit saona-orbit-a" aria-hidden="true"></div>
+
+      <div class="saona-orbit saona-orbit-b" aria-hidden="true"></div>
+
+      <div class="content saona-layout">
+
+        <div class="saona-heading">
+
+          <p class="kicker reveal" data-step>PRIMERA CITA OFICIAL · DONDE EMPEZÓ LA COLECCIÓN DE PLANES</p>
+
+          <h2 class="saona-title reveal" data-step>SAONA</h2>
+
+        </div>
+
+        <div class="saona-story reveal" data-step>
+
+          <span class="saona-number">01</span>
+
+          <p>Nuestra primera cita oficial fue aquí. Siempre me acordaré de lo que llevabas puesto.</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="scene scene-mcdonalds" data-scene="6">
+
+      <div class="noise"></div>
+
+      <div class="mcd-deco mcd-deco-one" aria-hidden="true"></div>
+
+      <div class="mcd-deco mcd-deco-two" aria-hidden="true"></div>
+
+
+
+      <div class="content mcd-layout">
+
+        <div class="mcd-copy">
+
+          <p class="kicker reveal mcd-kicker" data-step>Hay parejas con un restaurante especial.</p>
+
+          <div class="mcd-number reveal" data-step>27.522</div>
+
+          <div class="mcd-label reveal" data-step>VECES EN<br>McDONALD'S</div>
+
+          <p class="mcd-punch reveal" data-step>Y me parecen pocas.</p>
+
+          <p class="mcd-small reveal" data-step>No nos quebramos mucho la cabeza.</p>
+
+        </div>
+
+
+
+        <figure class="mcd-photo-card reveal" data-step>
+
+          <img src="./assets/photos/mcdonalds-cartel.jpg"
+
+            alt="Restaurante McDonald's de noche">
+
+          <figcaption>NUESTRO LUGAR DE KK</figcaption>
+
+          <span>* FAV</span>
+
+        </figure>
+
+      </div>
+
+    </section>
+
+    <section class="scene scene-travel-intro" data-scene="7">
+
+      <div class="noise"></div>
+
+      <div class="travel-intro-shape travel-intro-shape-a" aria-hidden="true"></div>
+
+      <div class="travel-intro-shape travel-intro-shape-b" aria-hidden="true"></div>
+
+      <div class="content travel-intro-content">
+
+        <p class="travel-intro-kicker reveal" data-step>NUEVA CATEGORÍA</p>
+
+        <h2 class="travel-intro-title">
+
+          <span class="reveal" data-step>NUESTROS</span>
+
+          <span class="reveal" data-step>VIAJES</span>
+
+        </h2>
+
+        <p class="travel-intro-copy reveal" data-step>De momento no son tantos como para presumir de pasaporte.</p>
+
+        <div class="travel-intro-stamp reveal" data-step>✈ CARLOS + CARLA</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="scene scene-travel" data-scene="8">
+
+      <div class="noise"></div>
+
+      <div class="travel-photo" aria-hidden="true"></div>
+
+      <div class="travel-overlay"></div>
+
+      <div class="content travel-content">
+
+        <div class="travel-copy-block">
+
+          <p class="kicker reveal travel-eyebrow" data-step>EL PRIMERO Y ÚLTIMO SOLOS, DE MOMENTO... 😭</p>
+
+          <h2 class="huge"><span class="line accent" data-step>FLORENCIA</span></h2>
+
+          <p class="caption travel-copy reveal" data-step>Se me quedó corto, pero fueron los mejores días del año.
+
+            Estuve genial contigo.</p>
+
+        </div>
+
+        <figure class="travel-memory reveal" data-step>
+
+          <img src="./assets/photos/viaje-pareja.jpeg" alt="Carlos y Carla juntos">
+
+          <figcaption>FLORENCIA · 07-11-2025</figcaption>
+
+        </figure>
+
+      </div>
+
+    </section>
+
+    <section class="scene scene-cinema" data-scene="9">
+
+      <div class="noise"></div>
+
+      <div class="content center">
+
+        <p class="kicker reveal" data-step>Si hay un plan que hemos repetido hasta convertirlo en costumbre, es
+
+          sentarnos delante de una pantalla gigante.</p>
+
+        <div class="stat reveal" data-step>49.942</div>
+
+        <div class="sub reveal" data-step>visitas al cine</div>
+
+        <p class="caption reveal" data-step>La frecuencia ha sido espectacular. La capacidad para elegir películas
+
+          buenas, bastante menos.</p>
+
+      </div>
+
+    </section>
+
+    <section class="scene scene-movies" data-scene="10">
+
+      <div class="noise"></div>
+
+      <div class="content center movies-layout">
+
+        <p class="kicker reveal movies-kicker" data-step>Lo de elegir películas no es nuestro fuerte.</p>
+
+
+
+        <div class="movie-cards">
+
+          <figure class="movie" style="--rotation:-4deg" data-step>
+
+            <img src="assets/movies/the-housemaid.png" alt="Póster de The Housemaid">
+
+            <figcaption>The Housemaid</figcaption>
+
+          </figure>
+
+
+
+          <figure class="movie movie-featured" style="--rotation:2deg" data-step>
+
+            <img src="assets/movies/scary-movie.jpg" alt="Póster de Scary Movie">
+
+            <figcaption>Scary Movie</figcaption>
+
+          </figure>
+
+
+
+          <figure class="movie" style="--rotation:-2deg" data-step>
+
+            <img src="assets/movies/trap.jfif" alt="Póster de Trap">
+
+            <figcaption>Trap</figcaption>
+
+          </figure>
+
+        </div>
+
+
+
+        <div class="movies-ending reveal" data-step>
+
+          <span>PERO AMOR...</span>
+
+          <strong>LO IMPORTANTE HA SIDO VERLAS CONTIGO.</strong>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="scene scene-tears" data-scene="11">
+
+      <div class="noise"></div><span class="tear" style="left:12%" data-step>💧</span><span class="tear"
+
+        style="left:45%;animation-delay:.3s" data-step>💧</span><span class="tear" style="left:78%;animation-delay:.7s"
+
+        data-step>💧</span>
+
+      <div class="content center">
+
+        <p class="kicker reveal" data-step>Hay estadísticas difíciles de medir. Esta, en cambio, necesitaba su propia
+
+          categoría.</p>
+
+        <div class="stat reveal" data-step>359.238</div>
+
+        <div class="sub reveal" data-step>lloros registrados</div>
+
+        <p class="caption reveal" data-step>Mi bizchochito mantiene el récord con una ventaja que parece matemáticamente
+
+          imposible de remontar.</p>
+
+      </div>
+
+    </section>
+
+    <section class="scene scene-cream" data-scene="12">
+
+      <div class="noise"></div>
+
+      <div class="content center">
+
+        <p class="kicker reveal" data-step>Hay una categoría de este Wrapped para la que hemos decidido no llevar una
+
+          hoja de Excel.</p>
+
+        <div class="cream reveal" data-step>NATA.</div>
+
+        <div class="sub reveal" data-step>Muchas veces.</div>
+
+        <p class="tiny reveal" data-step>La cifra exacta queda oficialmente clasificada.</p>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="scene scene-game" data-scene="13">
+
+      <div class="noise"></div>
+
+      <div class="game-box">
+
+        <p class="kicker reveal" data-step>MINIJUEGO · A ver que le toca a mi chica con la suerte que tiene.TUKI TUKI
+
+          TUKI.</p>
+
+        <h2 class="game-title reveal" data-step>ELIGE TU PREMIO</h2>
+
+        <div class="favors reveal interactive" id="favors" data-step>
+
+          <button class="favor" type="button">Cena donde tú quieras</button>
+
+          <button class="favor" type="button">Masaje de 30 minutos</button>
+
+          <button class="favor" type="button">Elegir la próxima peli</button>
+
+          <button class="favor" type="button">Calipo de lomo</button>
+
+        </div>
+
+        <div class="rigged" id="rigged" aria-live="polite"></div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="scene scene-song" data-scene="14">
+
+      <div class="noise"></div>
+
+      <div class="content song-layout">
+
+        <div class="song-copy">
+
+          <p class="kicker reveal" data-step>NUESTRA CANCIÓN</p>
+
+          <h2 class="song reveal" data-step>MEET ME<br>HALFWAY</h2>
+
+          <p class="song-memory reveal" data-step>Siempre me recordará a ti.</p>
+
+          <button class="play reveal interactive" id="songPlay" data-step type="button"
+
+            aria-label="Reproducir nuestra canción">▶ ESCUCHAR</button>
+
+        </div>
+
+        <figure class="song-cover reveal" data-step>
+
+          <div class="song-cover-shadow" aria-hidden="true"></div>
+
+          <img src="./assets/photos/meet-me-halfway-cover.jpg" alt="Portada de The E.N.D. de The Black Eyed Peas">
+
+          <figcaption>THE BLACK EYED PEAS · THE E.N.D.</figcaption>
+
+        </figure>
+
+      </div>
+
+    </section>
+
+    <section class="scene scene-letter" data-scene="15">
+
+      <div class="noise"></div>
+
+      <div class="letter-glow letter-glow-a" aria-hidden="true"></div>
+
+      <div class="letter-glow letter-glow-b" aria-hidden="true"></div>
+
+
+
+      <div class="content center letter-content">
+
+        <p class="letter-eyebrow">UNA ÚLTIMA COSA ANTES DE TERMINAR...</p>
+
+
+
+        <div class="letter-stage reveal" data-step>
+
+          <div class="paper-crumple" aria-hidden="true">
+
+            <span class="crumple-fold fold-a"></span>
+
+            <span class="crumple-fold fold-b"></span>
+
+            <span class="crumple-fold fold-c"></span>
+
+          </div>
+
+
+
+          <article class="love-letter reveal" data-step aria-label="Carta de amor">
+
+            <div class="letter-fold letter-fold-v"></div>
+
+            <div class="letter-fold letter-fold-h"></div>
+
+            <div class="letter-paper-content">
+
+              <span class="letter-small">PARA CARLA</span>
+
+              <h2>Una carta para ti.</h2>
+
+              <p class="letter-placeholder"></p>
+
+              <p>Amor, sabes que no soy el hombre que mejor se exprese del mundo. Siempre me dices que te diga cosas
+
+                bonitas y yo siempre me quedo en un "te quiero muchísimo", y no es porque no las piense, sino que me
+
+                quedo en blanco. ¿Por qué? Pues no lo sé nena, supongo que soy un poco autista. Pero de verdad, cuando
+
+                te digo que te quiero muchísimo es porque lo siento, es de corazón.</p>
+
+
+
+              <p>Eres mi persona favorita, lo que más ilusión me hace en mi vida y el mayor motivo por el que levantarme
+
+                a día de hoy. Con nadie me había entendido tan bien como contigo, y juraría que nunca me había reído
+
+                tanto con nadie.</p>
+
+
+
+              <p>Perdón por los días en que estoy más callado o más falto, y gracias por aguantarme. De verdad.</p>
+
+
+
+              <p>No sabía que una persona me podía hacer tan feliz. Eres lo mejor que tengo y quiero estar toda la vida
+
+                contigo.</p>
+
+
+
+              <p>Te quiero mucho, muchísimo. Te amo bizchochito ❤️❤️❤️❤️</p>
+
+              <span class="letter-signature">Carlos ♡</span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+
+        <p class="letter-instruction reveal" data-step>Ahora sí. Puedes seguir.</p>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="scene scene-final" data-scene="16">
+
+      <div class="noise"></div>
+
+      <div class="final-orbit final-orbit-a" aria-hidden="true"></div>
+
+      <div class="final-orbit final-orbit-b" aria-hidden="true"></div>
+
+      <div class="content center final-content">
+
+        <p class="kicker final-kicker reveal" data-step>Y HASTA AQUÍ LLEGA ESTA EDICIÓN.</p>
+
+        <h2 class="final-title reveal" data-step>
+
+          <span>CARLOS</span>
+
+          <span class="accent">+ CARLA</span>
+
+        </h2>
+
+        <div class="final-date reveal" data-step>
+
+          <span>27·04·2024</span><b>→</b><span>HOY</span>
+
+        </div>
+
+        <div class="final-message reveal" data-step>
+
+          <span>831 DÍAS DESPUÉS</span>
+
+          <strong>Y TODAVÍA QUEDA MUCHO POR METER EN EL PRÓXIMO WRAPPED.</strong>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <button class="tap-zone" id="tapZone" aria-label="Continuar"></button>
+
+    <p class="hint" id="hint">CLIC / TAP PARA CONTINUAR →</p>
+
+    <audio id="sceneAudio" preload="auto"></audio>
+
+  </main>
+
+  <script type="module" src="./js/main.js"></script>
+
+</body>
+
+
+
+</html>

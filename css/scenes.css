@@ -1,0 +1,1457 @@
+.scene-intro,.scene-final { background:#090909; }
+.scene-before { background:#f04ac7; color:#120c12; }
+.scene-before .second { color:#eaff38; }
+.scene-first-date,.scene-song { background:#eaff38; color:#111; }
+.scene-official { background:#5939ff; }
+.scene-days { background:#ff603d; color:#160e0c; }
+.scene-saona { background:#10b981; color:#071a12; }
+.scene-mcdonalds { background:#ffc928; color:#171109; }
+.scene-travel { background:#2575ff; }
+.scene-cinema { background:#ff4b4b; color:#170909; }
+.scene-movies { background:#111; }
+.scene-tears { background:#ff82d0; color:#20101a; }
+.scene-cream { background:#eee7db; color:#16120d; }
+.scene-game { background:#6b43ff; }
+.stamp { display:inline-block; margin-top:24px; border:4px solid currentColor; padding:.15em .4em; transform:rotate(-6deg); }
+.stamp.show { animation:stamp .5s; }
+@keyframes stamp { from { transform:rotate(-6deg) scale(1.8); filter:blur(8px); } }
+.date-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(30px,6vw,100px); align-items:center; }
+.date-big { font-size:clamp(74px,14vw,220px); line-height:.76; letter-spacing:-.07em; }
+.date-copy { font-size:clamp(44px,6vw,92px); line-height:.88; text-transform:uppercase; }
+.date-copy span { display:block; margin-top:28px; max-width:600px; font:900 clamp(17px,2vw,30px) Arial,sans-serif; line-height:1.05; letter-spacing:0; }
+.official-date { font-size:clamp(54px,11vw,175px); line-height:.9; letter-spacing:-.065em; white-space:nowrap; }
+.days { font-size:clamp(125px,27vw,420px); line-height:.72; letter-spacing:-.085em; }
+.stat { font-size:clamp(78px,18vw,285px); line-height:.78; letter-spacing:-.075em; overflow-wrap:anywhere; }
+.movie-cards {
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:clamp(14px,2.5vw,34px);
+  margin:clamp(24px,4vh,46px) auto;
+}
+
+.movie {
+  width:clamp(145px,17vw,245px);
+  margin:0;
+  opacity:0;
+  transform:translateY(70px) scale(.82) rotate(var(--rotation));
+  transition:opacity .55s ease, transform .7s cubic-bezier(.16,1,.3,1);
+}
+
+.movie.show {
+  opacity:1;
+  transform:translateY(0) scale(1) rotate(var(--rotation));
+}
+
+.movie img {
+  display:block;
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  border:3px solid #fff;
+  border-radius:10px;
+  box-shadow:0 18px 40px #0008;
+}
+
+.movie figcaption {
+  margin-top:13px;
+  font:900 clamp(12px,1.25vw,18px) Arial,sans-serif;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.tear { position:absolute; top:-12%; z-index:2; font-size:clamp(35px,6vw,88px); opacity:0; }
+.tear.show { opacity:1; animation:fall 1.5s linear infinite; }
+@keyframes fall { from { transform:translateY(0); } to { transform:translateY(115vh); } }
+.cream { font-size:clamp(80px,17vw,270px); line-height:.85; letter-spacing:-.07em; }
+.game-box { position:relative; z-index:60; width:min(940px,100%); text-align:center; }
+.game-title { margin:0; font-size:clamp(48px,8vw,120px); line-height:.86; letter-spacing:-.06em; }
+.favors { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:30px; }
+.favor { min-height:92px; border:3px solid currentColor; background:transparent; color:inherit; padding:18px 14px; cursor:pointer; font:900 clamp(14px,1.7vw,23px) Arial,sans-serif; text-transform:uppercase; transition:transform .2s,background .2s,color .2s; }
+.favor:hover { transform:translateY(-3px); background:#fff; color:#111; }
+.favor.chosen { background:#eaff38; color:#111; transform:scale(1.025); }
+.rigged { min-height:82px; margin-top:22px; font:900 clamp(18px,2.5vw,34px) Arial,sans-serif; }
+.rigged small { display:block; margin-top:7px; font:700 12px Arial,sans-serif; }
+.song { font-size:clamp(52px,10vw,150px); line-height:.84; letter-spacing:-.065em; }
+.play { margin-top:28px; width:72px; height:72px; border:3px solid currentColor; background:transparent; color:inherit; border-radius:50%; cursor:pointer; font-size:26px; }
+.final-date { margin-top:28px; font-size:clamp(30px,6vw,92px); letter-spacing:-.04em; }
+
+/* --- Viajes: fotografía de Florencia integrada en la escena --- */
+.scene-travel {
+  position: absolute;
+  background: #102c55;
+  color: #fff;
+}
+
+.travel-photo {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/travel/florencia.jpeg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.035);
+}
+
+.travel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(5, 12, 28, .88) 0%, rgba(5, 12, 28, .64) 48%, rgba(5, 12, 28, .18) 100%);
+}
+
+.travel-content {
+  max-width: 1050px;
+  margin-right: auto;
+  text-shadow: 0 3px 28px rgba(0, 0, 0, .35);
+}
+
+.travel-copy {
+  max-width: 760px;
+}
+
+/* ===== Portada: tele antigua con álbum interactivo ===== */
+.scene-intro .content {
+  display: grid;
+  grid-template-columns: minmax(320px, .9fr) minmax(420px, 1.1fr);
+  align-items: center;
+  gap: clamp(42px, 6vw, 100px);
+  width: min(1180px, 100%);
+}
+
+.intro-copy {
+  text-align: left;
+  max-width: 520px;
+}
+
+.intro-copy .kicker {
+  max-width: 430px;
+  margin-bottom: 22px;
+  font-size: clamp(12px, 1.05vw, 16px);
+  line-height: 1.35;
+}
+
+.intro-copy .mega {
+  font-size: clamp(58px, 7vw, 108px);
+  line-height: .82;
+}
+
+.intro-copy .stamp {
+  margin-top: 20px;
+  border-width: 3px;
+  font-size: clamp(13px, 1.15vw, 18px);
+}
+
+.crt-wrap {
+  width: min(560px, 42vw);
+  justify-self: center;
+  opacity: 0;
+  transform: translateY(28px) rotate(1.2deg) scale(.94);
+  transition: .72s cubic-bezier(.16, 1, .3, 1);
+}
+
+.crt-wrap.show {
+  opacity: 1;
+  transform: translateY(0) rotate(-.6deg) scale(1);
+}
+
+.crt-tv {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 614 / 427;
+  filter: drop-shadow(0 26px 32px rgba(0,0,0,.62));
+}
+
+/* La foto vive exactamente detrás del hueco transparente del PNG. */
+.crt-screen {
+  position: absolute;
+  z-index: 1;
+  left: 7.2%;
+  top: 10.4%;
+  width: 65.2%;
+  height: 69.2%;
+  overflow: hidden;
+  border-radius: 12% / 10%;
+  background: #080808;
+}
+
+.crt-frame {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.crt-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.075);
+  filter: saturate(.86) contrast(1.07) brightness(.94);
+  transition: opacity .18s ease, transform .75s cubic-bezier(.16,1,.3,1);
+}
+
+.crt-photo.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.crt-photo.photo-1 { object-position: center 45%; }
+.crt-photo.photo-2 { object-position: center 42%; }
+.crt-photo.photo-3 { object-position: center 38%; }
+.crt-photo.photo-4 { object-position: center 55%; }
+
+.crt-screen::before {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(to bottom, transparent 0 3px, rgba(0,0,0,.18) 4px);
+  mix-blend-mode: multiply;
+}
+
+.crt-screen::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  inset: -25%;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.18) 48%, transparent 58%);
+  transform: translateX(-55%);
+}
+
+.crt-screen.flash::after { animation: crtFlash .42s ease; }
+@keyframes crtFlash {
+  0% { transform: translateX(-55%); }
+  50% { transform: translateX(35%); }
+  100% { transform: translateX(90%); }
+}
+
+.crt-static {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    repeating-radial-gradient(circle at 20% 30%, #fff 0 1px, #000 1px 3px),
+    #777;
+  mix-blend-mode: screen;
+}
+
+.crt-static.on { animation: staticBurst .2s steps(3); }
+@keyframes staticBurst {
+  0%, 100% { opacity: 0; }
+  30%, 70% { opacity: .30; }
+}
+
+/* ============================================================
+   McDONALD'S — ÚNICA ESCENA REDISEÑADA EN ESTA VERSIÓN
+   Todo queda bajo .scene-mcdonalds para no afectar al resto.
+   ============================================================ */
+.scene-mcdonalds {
+  background:
+    radial-gradient(circle at 74% 28%, rgba(255,235,59,.38) 0 10%, transparent 31%),
+    linear-gradient(125deg, #ff2b16 0 48%, #ffc900 48% 100%);
+  color: #111;
+}
+
+.scene-mcdonalds .noise { opacity: .08; }
+
+.mcd-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(360px, .78fr);
+  align-items: center;
+  gap: clamp(38px, 6vw, 100px);
+}
+
+.mcd-copy { position: relative; z-index: 4; }
+.mcd-kicker { color: #fff7df; max-width: 560px; margin-bottom: 6px; }
+
+.mcd-number {
+  margin-left: -.06em;
+  font-size: clamp(112px, 16vw, 270px);
+  line-height: .78;
+  letter-spacing: -.085em;
+  color: #ffe400;
+  text-shadow: 9px 9px 0 #111;
+}
+
+.mcd-label {
+  display: inline-block;
+  margin-top: clamp(14px, 2vh, 25px);
+  padding: 10px 16px 8px;
+  background: #111;
+  color: #fff;
+  font: 900 clamp(25px, 3vw, 49px)/.88 Arial Black, Arial, sans-serif;
+  letter-spacing: -.04em;
+  transform: rotate(-1.4deg);
+}
+
+.mcd-punch {
+  margin: 25px 0 0;
+  font: 900 clamp(20px, 2.1vw, 34px)/1 Arial Black, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.mcd-small {
+  margin: 8px 0 0;
+  font: 800 clamp(12px, 1vw, 15px)/1.2 Arial, sans-serif;
+}
+
+.mcd-photo-card {
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  width: min(100%, 550px);
+  justify-self: center;
+  padding: 12px 12px 42px;
+  background: #fff7df;
+  box-shadow: 18px 18px 0 #111;
+  transform: rotate(3deg);
+}
+
+.mcd-photo-card.show { transform: rotate(3deg); }
+
+.mcd-photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  filter: saturate(1.16) contrast(1.04);
+}
+
+.mcd-photo-card figcaption {
+  margin-top: 12px;
+  font: 900 clamp(17px, 1.6vw, 25px)/1 Arial Black, Arial, sans-serif;
+  letter-spacing: -.025em;
+}
+
+.mcd-photo-card span {
+  display: block;
+  margin-top: 4px;
+  font: 800 10px/1 Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.mcd-deco {
+  position: absolute;
+  pointer-events: none;
+  border: clamp(18px, 2vw, 30px) solid #ffe400;
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+  opacity: .95;
+}
+.mcd-deco-one { width: 180px; height: 250px; right: 3%; bottom: -70px; transform: rotate(16deg); }
+.mcd-deco-two { width: 120px; height: 170px; right: 14%; bottom: -65px; transform: rotate(-14deg); }
+
+@media (max-width: 800px) {
+  .mcd-layout { grid-template-columns: 1fr; gap: 18px; align-content: center; }
+  .mcd-copy { text-align: left; }
+  .mcd-number { font-size: clamp(82px, 25vw, 150px); }
+  .mcd-label { font-size: clamp(22px, 7vw, 38px); }
+  .mcd-photo-card { width: min(72vw, 360px); padding: 8px 8px 30px; box-shadow: 10px 10px 0 #111; }
+  .mcd-punch { margin-top: 15px; }
+}
+
+@media (max-height: 720px) and (min-width: 801px) {
+  .mcd-number { font-size: clamp(100px, 13vw, 190px); }
+  .mcd-photo-card { width: min(36vw, 430px); }
+}
+
+/* Ajuste exclusivo de la escena de días: separa el texto del contador. */
+.scene-days .sub {
+  margin-top: clamp(18px, 2.2vh, 28px);
+}
+
+/* Escena de días · foto integrada sin afectar al resto de pantallas */
+.scene-days {
+  overflow: hidden;
+}
+
+.scene-days .days-content {
+  position: relative;
+  z-index: 3;
+  width: min(92vw, 1280px);
+  transform: translateX(-12%);
+}
+
+.scene-days .days-photo {
+  position: absolute;
+  z-index: 1;
+  top: 15%;
+  right: 5.5%;
+  width: clamp(250px, 27vw, 470px);
+  height: clamp(360px, 61vh, 650px);
+  padding: 10px;
+  background: #f7efe2;
+  border: 3px solid #160e0c;
+  box-shadow: 18px 18px 0 rgba(22, 14, 12, .95);
+  transform: rotate(3deg);
+  overflow: hidden;
+}
+
+.scene-days .days-photo::after {
+  content: "27 · 04 · 2024";
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  padding: 6px 9px;
+  background: #eaff38;
+  color: #160e0c;
+  font: 900 13px/1 Arial, sans-serif;
+  letter-spacing: .08em;
+}
+
+.scene-days .days-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.92) contrast(1.04);
+}
+
+.scene-days .sub {
+  margin-top: clamp(30px, 4vh, 52px);
+}
+
+@media (max-width: 900px) {
+  .scene-days .days-content {
+    transform: none;
+    width: 94vw;
+  }
+
+  .scene-days .days-photo {
+    top: auto;
+    right: 5vw;
+    bottom: 8vh;
+    width: clamp(150px, 32vw, 250px);
+    height: clamp(210px, 34vh, 330px);
+    opacity: .42;
+    box-shadow: 10px 10px 0 rgba(22, 14, 12, .9);
+  }
+
+  .scene-days .days-photo::after {
+    display: none;
+  }
+
+  .scene-days .days {
+    position: relative;
+    z-index: 4;
+  }
+}
+
+/* V5.5 · escena 25/06: composición específica, sin afectar al resto */
+.scene-official .content {
+  gap: clamp(14px, 2vh, 24px);
+}
+
+.scene-official .official-eyebrow {
+  margin-bottom: clamp(4px, 1vh, 10px);
+  opacity: .88;
+}
+
+.scene-official .official-story {
+  width: min(1040px, 88vw);
+  margin-top: clamp(18px, 3vh, 34px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.scene-official .official-attempt {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 2px solid rgba(255,255,255,.72);
+  font: 900 clamp(12px, 1.15vw, 18px)/1 Arial, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transform: rotate(-1deg);
+}
+
+.scene-official .official-story strong {
+  display: inline-block;
+  padding: .24em .48em .28em;
+  background: #eaff38;
+  color: #17110f;
+  box-shadow: 9px 9px 0 #17110f;
+  font: 1000 clamp(22px, 3vw, 46px)/.98 Arial, sans-serif;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+  transform: rotate(.7deg);
+}
+
+/* V5.6 · Florencia: PortAventura fuera + recuerdo personal */
+.scene-travel .travel-content {
+  width: min(1480px, 90vw);
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .58fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 96px);
+}
+
+.scene-travel .travel-copy-block {
+  position: relative;
+  z-index: 3;
+}
+
+.scene-travel .travel-copy-block .huge {
+  margin: clamp(18px, 3vh, 34px) 0;
+}
+
+.scene-travel .travel-copy-block .huge .line {
+  font-size: clamp(82px, 11vw, 185px);
+  line-height: .82;
+}
+
+.scene-travel .travel-copy {
+  max-width: 650px;
+}
+
+.scene-travel .travel-memory {
+  position: relative;
+  z-index: 3;
+  width: min(360px, 26vw);
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  padding: 10px 10px 48px;
+  justify-self: end;
+  background: #f7efe2;
+  border: 3px solid #10192b;
+  box-shadow: 18px 18px 0 rgba(234,255,56,.95);
+  transform: rotate(2.2deg);
+  overflow: hidden;
+}
+
+.scene-travel .travel-memory img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.9) contrast(1.04);
+}
+
+.scene-travel .travel-memory figcaption {
+  position: absolute;
+  left: 16px;
+  bottom: 15px;
+  color: #10192b;
+  font: 1000 clamp(12px, 1vw, 16px)/1 Arial, sans-serif;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 900px) {
+  .scene-travel .travel-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .scene-travel .travel-memory {
+    position: absolute;
+    right: 5vw;
+    bottom: 8vh;
+    width: clamp(150px, 31vw, 240px);
+    opacity: .5;
+    box-shadow: 10px 10px 0 rgba(234,255,56,.9);
+  }
+  .scene-travel .travel-copy-block {
+    z-index: 4;
+  }
+}
+
+/* V5.7 · Florencia: composición más limpia y armónica */
+.scene-travel .travel-content {
+  width: min(1440px, 88vw);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .48fr);
+  gap: clamp(52px, 7vw, 112px);
+}
+
+.scene-travel .travel-copy-block {
+  max-width: 850px;
+  align-self: center;
+}
+
+.scene-travel .travel-copy-block .kicker {
+  display: inline-block;
+  margin-bottom: clamp(14px, 2vh, 24px);
+  padding: .38em .72em;
+  border: 2px solid rgba(255,255,255,.72);
+  border-radius: 999px;
+  background: rgba(10,20,38,.32);
+  backdrop-filter: blur(5px);
+}
+
+.scene-travel .travel-copy-block .huge {
+  margin: 0 0 clamp(28px, 4vh, 46px);
+}
+
+.scene-travel .travel-copy-block .huge .line {
+  font-size: clamp(80px, 10vw, 164px);
+  line-height: .88;
+  letter-spacing: -.055em;
+}
+
+.scene-travel .travel-copy {
+  max-width: 720px;
+  margin-left: clamp(12px, 2vw, 34px);
+  padding-left: clamp(18px, 2vw, 30px);
+  border-left: 5px solid #eaff38;
+  font-size: clamp(17px, 1.55vw, 25px);
+  line-height: 1.28;
+}
+
+.scene-travel .travel-memory {
+  width: min(330px, 23vw);
+  padding: 9px 9px 43px;
+  justify-self: center;
+  border-width: 2px;
+  box-shadow: 14px 14px 0 rgba(234,255,56,.92);
+  transform: rotate(1.1deg);
+}
+
+.scene-travel .travel-memory figcaption {
+  left: 14px;
+  bottom: 14px;
+  letter-spacing: .055em;
+}
+
+@media (max-width: 900px) {
+  .scene-travel .travel-copy-block .huge .line {
+    font-size: clamp(62px, 17vw, 118px);
+  }
+
+  .scene-travel .travel-copy {
+    max-width: 72%;
+    margin-left: 0;
+  }
+
+  .scene-travel .travel-memory {
+    right: 4vw;
+    bottom: 7vh;
+    width: clamp(145px, 30vw, 225px);
+    opacity: .72;
+  }
+}
+
+
+/* V5.8 · Florencia: composición corregida */
+.scene-travel .travel-content {
+  width: min(1380px, 88vw);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  align-items: center;
+  gap: clamp(44px, 6vw, 90px);
+}
+
+.scene-travel .travel-copy-block {
+  width: 100%;
+  max-width: 900px;
+  align-self: center;
+}
+
+.scene-travel .travel-copy-block .travel-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .35em;
+  margin: 0 0 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  font-size: clamp(16px, 1.25vw, 21px);
+  letter-spacing: .15em;
+}
+
+.scene-travel .travel-copy-block .huge {
+  margin: 0 0 clamp(26px, 3.5vh, 40px);
+}
+
+.scene-travel .travel-copy-block .huge .line {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  font-size: clamp(76px, 8.2vw, 138px);
+  line-height: .86;
+  letter-spacing: -.06em;
+  white-space: nowrap;
+}
+
+.scene-travel .travel-copy {
+  max-width: 760px;
+  margin: 0;
+  padding: 0 0 0 22px;
+  border-left: 4px solid #eaff38;
+  font-size: clamp(17px, 1.35vw, 23px);
+  line-height: 1.32;
+}
+
+.scene-travel .travel-memory {
+  width: 300px;
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  padding: 8px 8px 42px;
+  justify-self: end;
+  border: 2px solid #10192b;
+  box-shadow: 11px 11px 0 #eaff38;
+  transform: rotate(.7deg);
+}
+
+.scene-travel .travel-memory img {
+  object-position: center 46%;
+}
+
+@media (max-width: 1050px) {
+  .scene-travel .travel-content {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 34px;
+  }
+  .scene-travel .travel-memory { width: 250px; }
+  .scene-travel .travel-copy-block .huge .line { font-size: clamp(64px, 9vw, 105px); }
+}
+
+@media (max-width: 760px) {
+  .scene-travel .travel-content {
+    width: 88vw;
+    display: block;
+  }
+  .scene-travel .travel-copy-block { position: relative; z-index: 4; }
+  .scene-travel .travel-copy-block .huge .line {
+    font-size: clamp(58px, 17vw, 92px);
+    white-space: normal;
+  }
+  .scene-travel .travel-copy { max-width: 70%; font-size: 15px; }
+  .scene-travel .travel-memory {
+    position: absolute;
+    right: 4vw;
+    bottom: 8vh;
+    width: clamp(135px, 31vw, 190px);
+    opacity: .78;
+    box-shadow: 8px 8px 0 #eaff38;
+  }
+}
+
+/* V5.9 · Introducción a viajes */
+.scene-travel-intro {
+  background: #6d39ff;
+  color: #fffaf2;
+  overflow: hidden;
+}
+
+.scene-travel-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 30%, rgba(234,255,56,.20), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,.04), transparent 45%);
+  pointer-events: none;
+}
+
+.travel-intro-content {
+  width: min(1180px, 86vw);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+.travel-intro-kicker {
+  margin: 0 0 18px;
+  font-size: clamp(15px, 1.15vw, 20px);
+  font-weight: 900;
+  letter-spacing: .22em;
+}
+
+.travel-intro-title {
+  margin: 0;
+  font-size: clamp(88px, 12.5vw, 205px);
+  line-height: .72;
+  letter-spacing: -.075em;
+  font-weight: 1000;
+}
+
+.travel-intro-title span {
+  display: block;
+}
+
+.travel-intro-title span:last-child {
+  color: #eaff38;
+  margin-left: clamp(35px, 8vw, 130px);
+}
+
+.travel-intro-copy {
+  width: min(620px, 65vw);
+  margin: clamp(34px, 5vh, 54px) 0 0 clamp(35px, 8vw, 130px);
+  font-size: clamp(17px, 1.35vw, 23px);
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.travel-intro-stamp {
+  position: absolute;
+  right: 2vw;
+  bottom: 4vh;
+  padding: 13px 18px;
+  border: 3px solid #fffaf2;
+  font-size: clamp(13px, 1vw, 17px);
+  font-weight: 1000;
+  letter-spacing: .12em;
+  transform: rotate(-5deg);
+}
+
+.travel-intro-shape {
+  position: absolute;
+  z-index: 1;
+  border-radius: 999px;
+  background: #ff5a3d;
+  transform: rotate(-24deg);
+}
+
+.travel-intro-shape-a {
+  width: 36vw;
+  height: 11vw;
+  right: -8vw;
+  top: 22vh;
+}
+
+.travel-intro-shape-b {
+  width: 24vw;
+  height: 7vw;
+  right: 8vw;
+  bottom: 20vh;
+  background: #eaff38;
+  transform: rotate(31deg);
+}
+
+@media (max-width: 760px) {
+  .travel-intro-content { width: 86vw; }
+  .travel-intro-title { font-size: clamp(66px, 22vw, 118px); line-height: .78; }
+  .travel-intro-title span:last-child { margin-left: 0; }
+  .travel-intro-copy { width: 88%; margin-left: 0; }
+  .travel-intro-stamp { right: 6vw; bottom: 8vh; }
+  .travel-intro-shape-a { width: 70vw; height: 20vw; right: -25vw; }
+  .travel-intro-shape-b { width: 50vw; height: 14vw; right: -8vw; }
+}
+
+/* V6.0 — Cine: composición integrada, sin invadir el hint inferior */
+.scene-movies .movies-layout {
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  align-items: center;
+  justify-items: center;
+  gap: clamp(12px, 2vh, 22px);
+  padding-top: clamp(4px, 1vh, 12px);
+  padding-bottom: clamp(26px, 4vh, 42px);
+}
+
+.scene-movies .movies-kicker {
+  max-width: 1050px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(13px, 1.25vw, 20px);
+  line-height: 1.15;
+}
+
+.scene-movies .movie-cards {
+  width: min(900px, 82vw);
+  height: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 42px);
+}
+
+.scene-movies .movie {
+  width: clamp(145px, 15vw, 220px);
+}
+
+.scene-movies .movie-featured {
+  width: clamp(155px, 16vw, 235px);
+  z-index: 2;
+}
+
+.scene-movies .movie img {
+  box-shadow: 0 15px 34px rgba(0,0,0,.55);
+}
+
+.scene-movies .movies-ending {
+  width: min(820px, 88vw);
+  margin: 0 auto;
+  padding: 11px 20px 12px;
+  border: 2px solid rgba(255,255,255,.9);
+  background: #eaff38;
+  color: #111;
+  transform: rotate(-.7deg);
+  text-align: center;
+  box-shadow: 8px 8px 0 rgba(255,255,255,.12);
+}
+
+.scene-movies .movies-ending.show {
+  transform: rotate(-.7deg);
+}
+
+.scene-movies .movies-ending span {
+  display: inline;
+  margin-right: .3em;
+  font: 900 clamp(12px, 1.25vw, 18px)/1 Arial, sans-serif;
+  letter-spacing: .08em;
+}
+
+.scene-movies .movies-ending strong {
+  font: 900 clamp(18px, 2vw, 30px)/1 Arial Black, Arial, sans-serif;
+  letter-spacing: -.02em;
+}
+
+
+/* V6.2 · Florencia: foto más protagonista */
+.scene-travel .travel-content {
+  grid-template-columns: minmax(0, 1fr) 410px;
+  gap: clamp(36px, 4.5vw, 72px);
+}
+
+.scene-travel .travel-memory {
+  width: 385px;
+  padding: 9px 9px 46px;
+  transform: rotate(3.2deg);
+  box-shadow: 15px 15px 0 #eaff38;
+  transform-origin: center center;
+}
+
+.scene-travel .travel-memory img {
+  object-position: center 46%;
+}
+
+.scene-travel .travel-copy-block .travel-eyebrow {
+  font-size: clamp(15px, 1.15vw, 20px);
+  letter-spacing: .12em;
+}
+
+@media (max-width: 1100px) {
+  .scene-travel .travel-content {
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 30px;
+  }
+  .scene-travel .travel-memory { width: 315px; }
+}
+
+@media (max-width: 760px) {
+  .scene-travel .travel-memory {
+    width: clamp(165px, 39vw, 230px);
+    right: 3vw;
+    bottom: 7vh;
+    transform: rotate(4deg);
+    box-shadow: 9px 9px 0 #eaff38;
+  }
+  .scene-travel .travel-copy-block .travel-eyebrow {
+    max-width: 65%;
+    line-height: 1.25;
+  }
+}
+
+/* V6.3 · Final más limpio y con jerarquía Wrapped */
+.scene-final {
+  background:
+    radial-gradient(circle at 82% 22%, rgba(125, 71, 255, .34), transparent 27%),
+    radial-gradient(circle at 16% 82%, rgba(234, 255, 56, .16), transparent 25%),
+    #090909;
+  overflow: hidden;
+}
+
+.scene-final .final-content {
+  width: min(1120px, 88vw);
+  height: 100%;
+  padding-top: 34px;
+  padding-bottom: 62px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  z-index: 3;
+}
+
+.scene-final .final-kicker {
+  margin: 0;
+  font-size: clamp(12px, 1.15vw, 18px);
+  letter-spacing: .18em;
+}
+
+.scene-final .final-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font: 900 clamp(74px, 10.2vw, 158px)/.78 Arial Black, Arial, sans-serif;
+  letter-spacing: -.075em;
+  text-transform: uppercase;
+}
+
+.scene-final .final-title .accent { color: #eaff38; }
+
+.scene-final .final-date {
+  margin: 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2vw, 30px);
+  font: 900 clamp(30px, 4.6vw, 68px)/1 Arial Black, Arial, sans-serif;
+  letter-spacing: -.045em;
+}
+
+.scene-final .final-date b {
+  color: #eaff38;
+  font-weight: 900;
+}
+
+.scene-final .final-message {
+  margin-top: 2px;
+  width: min(760px, 88vw);
+  padding: 13px 20px 15px;
+  background: #eaff38;
+  color: #0a0a0a;
+  border: 2px solid #fff;
+  box-shadow: 9px 9px 0 rgba(124, 75, 255, .85);
+  transform: rotate(-.65deg);
+}
+
+.scene-final .final-message.show { transform: rotate(-.65deg); }
+
+.scene-final .final-message span,
+.scene-final .final-message strong { display: block; }
+.scene-final .final-message span {
+  margin-bottom: 4px;
+  font: 900 11px/1 Arial, sans-serif;
+  letter-spacing: .16em;
+}
+.scene-final .final-message strong {
+  font: 900 clamp(16px, 1.7vw, 25px)/1.08 Arial Black, Arial, sans-serif;
+}
+
+.final-orbit {
+  position: absolute;
+  border: 2px solid rgba(255,255,255,.16);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.final-orbit-a { width: 410px; height: 410px; right: -165px; top: 110px; }
+.final-orbit-b { width: 280px; height: 280px; left: -110px; bottom: -90px; border-color: rgba(234,255,56,.28); }
+
+/* =========================================================
+   CARTA DE AMOR · escena previa al final
+   El primer clic despliega el buruño hasta convertirlo en carta.
+   ========================================================= */
+.scene-letter {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(234,255,56,.16), transparent 26%),
+    radial-gradient(circle at 84% 76%, rgba(126,67,255,.24), transparent 30%),
+    #090909;
+  color:#f7f2e8;
+  overflow:hidden;
+}
+
+.letter-content {
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding-top:72px;
+}
+
+.letter-eyebrow {
+  position:absolute;
+  top:clamp(110px,14vh,150px);
+  left:50%;
+  transform:translateX(-50%);
+  width:min(900px,82vw);
+  margin:0;
+  text-align:center;
+  font-size:clamp(13px,1.25vw,20px);
+  font-weight:900;
+  letter-spacing:.18em;
+}
+
+.letter-stage {
+  position:relative;
+  width:min(850px,78vw);
+  height:min(570px,58vh);
+  display:grid;
+  place-items:center;
+  opacity:0;
+  transform:scale(.82);
+  transition:opacity .35s ease, transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.letter-stage.show { opacity:1; transform:scale(1); }
+
+.paper-crumple {
+  position:absolute;
+  z-index:3;
+  width:150px;
+  aspect-ratio:1;
+  border-radius:43% 57% 52% 48% / 55% 40% 60% 45%;
+  background:
+    linear-gradient(35deg, transparent 44%, rgba(80,60,35,.16) 45% 48%, transparent 49%),
+    linear-gradient(145deg, transparent 38%, rgba(80,60,35,.12) 39% 42%, transparent 43%),
+    #f3ead8;
+  box-shadow:16px 22px 0 rgba(234,255,56,.85), 0 24px 50px rgba(0,0,0,.48);
+  transform:rotate(-11deg);
+  transition:opacity .22s ease .05s, transform .55s cubic-bezier(.5,-.2,.2,1);
+}
+
+.crumple-fold { position:absolute; display:block; background:rgba(70,50,30,.16); transform-origin:center; }
+.fold-a { width:115px; height:2px; left:15px; top:48px; transform:rotate(31deg); }
+.fold-b { width:92px; height:2px; left:28px; top:90px; transform:rotate(-42deg); }
+.fold-c { width:2px; height:112px; left:78px; top:17px; transform:rotate(17deg); }
+
+.love-letter {
+  position:absolute;
+  z-index:4;
+  width:min(760px,74vw);
+  height:min(480px,50vh);
+  padding:clamp(30px,4vw,58px);
+  color:#17130f;
+  background:
+    linear-gradient(90deg, transparent 49.7%, rgba(80,60,35,.08) 50%, transparent 50.3%),
+    linear-gradient(transparent 49.7%, rgba(80,60,35,.07) 50%, transparent 50.3%),
+    #f4ecdc;
+  box-shadow:18px 20px 0 #eaff38, 0 32px 70px rgba(0,0,0,.52);
+  overflow:hidden;
+  opacity:0;
+  border-radius:48% 52% 44% 56% / 52% 43% 57% 48%;
+  transform:scale(.16) rotate(-14deg);
+  transform-origin:center;
+  transition:
+    opacity .08s linear,
+    transform 1.05s cubic-bezier(.16,.84,.24,1),
+    border-radius .85s ease,
+    box-shadow .8s ease;
+}
+
+.love-letter.show {
+  opacity:1;
+  border-radius:3px;
+  transform:scale(1) rotate(-1.2deg);
+  box-shadow:18px 20px 0 #eaff38, 0 32px 70px rgba(0,0,0,.52);
+}
+
+.letter-stage:has(.love-letter.show) .paper-crumple {
+  opacity:0;
+  transform:scale(2.4) rotate(10deg);
+}
+
+.letter-fold { position:absolute; pointer-events:none; opacity:.22; }
+.letter-fold-v { top:0; bottom:0; left:50%; border-left:1px dashed #6f604e; }
+.letter-fold-h { left:0; right:0; top:50%; border-top:1px dashed #6f604e; }
+
+.letter-paper-content {
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  text-align:left;
+}
+.letter-small { font-size:clamp(11px,.9vw,15px); font-weight:950; letter-spacing:.18em; }
+.letter-paper-content h2 { margin:18px 0 20px; font-size:clamp(34px,4.4vw,70px); line-height:.92; letter-spacing:-.05em; }
+.letter-placeholder { margin:0; max-width:620px; font-family:Georgia,serif; font-size:clamp(18px,1.55vw,25px); line-height:1.55; }
+.letter-signature { margin-top:auto; align-self:flex-end; font-family:Georgia,serif; font-style:italic; font-size:clamp(20px,2vw,30px); }
+
+.letter-instruction { margin:8px 0 0; font-size:12px; font-weight:900; letter-spacing:.16em; opacity:0; }
+.letter-instruction.show { opacity:.7; }
+.letter-glow { position:absolute; border:1px solid rgba(255,255,255,.15); border-radius:50%; }
+.letter-glow-a { width:430px; height:430px; left:-190px; top:170px; }
+.letter-glow-b { width:280px; height:280px; right:-90px; bottom:-80px; border-color:rgba(234,255,56,.3); }
+
+/* V6.5 — 25/06 más armónico */
+.scene-official .content {
+  width: min(1220px, 92vw);
+  gap: 0;
+  padding-top: clamp(28px, 5vh, 58px);
+}
+
+.scene-official .official-eyebrow {
+  margin: 0 0 clamp(10px, 1.6vh, 18px);
+  font-size: clamp(14px, 1.25vw, 20px);
+  letter-spacing: .18em;
+}
+
+.scene-official .official-date {
+  font-size: clamp(76px, 10.2vw, 158px);
+  line-height: .82;
+  letter-spacing: -.06em;
+  margin: 0;
+}
+
+.scene-official .official-story {
+  position: relative;
+  width: min(900px, 82vw);
+  margin-top: clamp(30px, 4.8vh, 52px);
+  gap: 0;
+}
+
+.scene-official .official-attempt {
+  position: relative;
+  z-index: 3;
+  margin-bottom: -8px;
+  padding: 8px 18px;
+  background: #5b42ff;
+  border: 2px solid rgba(255,255,255,.82);
+  color: #fffaf0;
+  font-size: clamp(11px, 1vw, 16px);
+  letter-spacing: .11em;
+  transform: rotate(-1deg);
+}
+
+.scene-official .official-story strong {
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(22px, 3vh, 34px) clamp(24px, 4vw, 58px);
+  background: #eaff38;
+  color: #17110f;
+  box-shadow: 11px 11px 0 rgba(23,17,15,.96);
+  font-size: clamp(24px, 2.65vw, 41px);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+  transform: rotate(.25deg);
+}
+
+/* V6.6 — sello de viajes con fondo negro para mejorar el contraste */
+.scene-travel-intro .travel-intro-stamp {
+  background: #0b0b0b;
+  color: #fffaf2;
+  border-color: #0b0b0b;
+  box-shadow: 7px 7px 0 rgba(255, 255, 255, .18);
+}
+
+/* V6.7 · Meet Me Halfway */
+.scene-song {
+  background: linear-gradient(115deg, #eaff38 0 58%, #16a05d 58% 100%);
+  color: #0d0d0d;
+}
+.scene-song::after {
+  content:"";
+  position:absolute;
+  width:34vw;
+  height:34vw;
+  border:clamp(24px,3vw,52px) solid #111;
+  border-radius:50%;
+  right:-13vw;
+  bottom:-19vw;
+  opacity:.08;
+}
+.song-layout {
+  width:min(1320px,88vw);
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(300px,.72fr);
+  gap:clamp(44px,7vw,110px);
+  align-items:center;
+  text-align:left;
+}
+.scene-song .kicker { margin:0 0 18px; letter-spacing:.18em; }
+.scene-song .song {
+  margin:0;
+  font-size:clamp(5rem,9.6vw,10.5rem);
+  line-height:.76;
+  letter-spacing:-.07em;
+}
+.song-memory {
+  display:inline-block;
+  margin:34px 0 24px;
+  padding:10px 16px;
+  background:#111;
+  color:#fff;
+  font-size:clamp(1.1rem,1.55vw,1.55rem);
+  font-weight:900;
+  transform:rotate(-1deg);
+}
+.scene-song .play {
+  width:auto;
+  height:auto;
+  min-width:150px;
+  padding:13px 20px;
+  border:2px solid #111;
+  border-radius:999px;
+  background:transparent;
+  color:#111;
+  font:inherit;
+  font-weight:900;
+  cursor:pointer;
+}
+.scene-song .play:hover { background:#111; color:#eaff38; }
+.song-cover { position:relative; margin:0; width:min(390px,30vw); justify-self:center; transform:rotate(3deg); }
+.song-cover-shadow { position:absolute; inset:18px -18px -18px 18px; background:#111; z-index:-1; }
+.song-cover img { display:block; width:100%; aspect-ratio:1; object-fit:cover; border:5px solid #111; }
+.song-cover figcaption { background:#111; color:#fff; padding:11px 14px; font-weight:900; font-size:.85rem; letter-spacing:.08em; }
+
+/* V6.9 · SAONA — composición más equilibrada */
+.scene-saona {
+  background: linear-gradient(125deg, #12bd8a 0 68%, #eaff38 68% 100%);
+  color: #071a12;
+  overflow: hidden;
+}
+.scene-saona::before {
+  content: "";
+  position: absolute;
+  width: min(36vw, 560px);
+  aspect-ratio: 1;
+  right: 7vw;
+  top: 50%;
+  transform: translateY(-50%);
+  border: clamp(22px, 2.8vw, 46px) solid rgba(7,26,18,.12);
+  border-radius: 50%;
+}
+.saona-layout {
+  width: min(1380px, 86vw);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .65fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: clamp(52px, 8vw, 130px);
+  row-gap: 24px;
+  text-align: left;
+}
+.saona-heading { align-self: end; }
+.scene-saona .kicker {
+  margin: 0 0 12px;
+  font-size: clamp(15px, 1.25vw, 21px);
+  letter-spacing: .22em;
+}
+.saona-title {
+  margin: 0;
+  font-size: clamp(110px, 15vw, 245px);
+  line-height: .72;
+  letter-spacing: -.075em;
+}
+.saona-story {
+  position: relative;
+  align-self: end;
+  max-width: 500px;
+  padding: 28px 30px 30px;
+  background: #071a12;
+  color: #f8f3e9;
+  box-shadow: 12px 12px 0 #ff5d42;
+  transform: rotate(1.2deg);
+}
+.saona-story .saona-number {
+  display: block;
+  margin-bottom: 16px;
+  color: #eaff38;
+  font-size: clamp(42px, 4vw, 66px);
+  line-height: .8;
+  font-weight: 1000;
+  letter-spacing: -.05em;
+}
+.saona-story p {
+  margin: 0;
+  font-size: clamp(18px, 1.55vw, 25px);
+  line-height: 1.18;
+  font-weight: 850;
+}
+.saona-tag {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-left: clamp(5px, 4vw, 70px);
+  padding: 10px 16px;
+  border: 2px solid #071a12;
+  font-size: clamp(12px, 1.05vw, 17px);
+  font-weight: 1000;
+  letter-spacing: .09em;
+  transform: rotate(-1deg);
+}
+.saona-orbit {
+  position: absolute;
+  border-radius: 999px;
+  background: #ff5d42;
+  pointer-events: none;
+}
+.saona-orbit-a { width: 230px; height: 46px; right: 2vw; top: 25%; transform: rotate(-28deg); }
+.saona-orbit-b { width: 170px; height: 34px; right: 14vw; bottom: 16%; transform: rotate(35deg); background:#5939ff; }
+
+/* V7.3 · Carta: composición amplia y legible, sin alterar el texto */
+.scene-letter .letter-content {
+  padding-top: 64px;
+}
+
+.scene-letter .letter-eyebrow {
+  top: clamp(92px, 10.5vh, 118px);
+  z-index: 8;
+}
+
+.scene-letter .letter-stage {
+  width: min(1240px, 88vw);
+  height: min(690px, 72vh);
+  margin-top: 38px;
+}
+
+.scene-letter .love-letter {
+  width: min(1120px, 84vw);
+  height: min(610px, 65vh);
+  padding: clamp(28px, 2.6vw, 42px) clamp(34px, 3.2vw, 52px);
+}
+
+.scene-letter .letter-paper-content {
+  display: block;
+  height: 100%;
+  text-align: left;
+}
+
+.scene-letter .letter-small {
+  display: block;
+  margin-bottom: 10px;
+  font-size: clamp(10px, .72vw, 13px);
+}
+
+.scene-letter .letter-paper-content h2 {
+  margin: 0 0 20px;
+  font-size: clamp(38px, 3.5vw, 58px);
+  line-height: .95;
+}
+
+.scene-letter .letter-body {
+  column-count: 2;
+  column-gap: clamp(34px, 4vw, 64px);
+  column-rule: 1px solid rgba(80,60,35,.12);
+  height: calc(100% - 105px);
+  font-family: Georgia, serif;
+  font-size: clamp(12px, .92vw, 15px);
+  line-height: 1.38;
+}
+
+.scene-letter .letter-body p {
+  margin: 0 0 12px;
+  break-inside: avoid;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.scene-letter .letter-placeholder {
+  display: none;
+}
+
+.scene-letter .letter-signature {
+  display: block;
+  margin: 14px 0 0;
+  text-align: right;
+  font-size: clamp(18px, 1.45vw, 25px);
+}
+
+.scene-letter .letter-instruction {
+  position: absolute;
+  bottom: 30px;
+}
